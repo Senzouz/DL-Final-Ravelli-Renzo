@@ -70,10 +70,6 @@ Los modelos de TL se entrenan en dos fases: *feature extraction* (backbone conge
 
 Se aplica **Grad-CAM** sobre ResNet50 para visualizar qué regiones del pulmón motivan la predicción. Las activaciones se concentran en el parénquima pulmonar (zonas medias e inferiores), regiones clínicamente esperables para infiltrados neumónicos, lo que da confianza de que el modelo no aprendió atajos espurios.
 
-## Video
-
-🎥 *Pendiente de subir a YouTube (≤ 5 min).*
-
 ## Autor
 
 **Renzo Ravelli** — Especialización Inteligencia Artificial para Negocios, 2026.
