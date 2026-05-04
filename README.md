@@ -70,4 +70,4 @@ Se aplica **Grad-CAM** sobre el mejor modelo para visualizar qué regiones del p
 
 ## Autor
 
-**Renzo Ravelli** — Especialización en Deep Learning, 2026.
+**Renzo Ravelli** — Especialización Inteligencia Artificial para Negocios, 2026.
