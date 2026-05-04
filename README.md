@@ -56,13 +56,19 @@ Los modelos de TL se entrenan en dos fases: *feature extraction* (backbone conge
 └── report/                     # reporte final (PDF o markdown)
 ```
 
-## Métricas reportadas
+## Resultados (test set)
 
-Sobre el test set: **Accuracy, Precision, Recall, F1, AUC-ROC y AUC-PR**, más **matriz de confusión** y **curva ROC superpuesta** de los tres modelos. Se prioriza recall por el contexto clínico.
+| Modelo            | Accuracy | Precision | Recall  | F1     | AUC-ROC | AUC-PR |
+|-------------------|----------|-----------|---------|--------|---------|--------|
+| CNN custom        | 0.8622   | 0.8378    | 0.9667  | 0.8976 | 0.9396  | 0.9573 |
+| **ResNet50**      | **0.9054** | 0.8894  | **0.9692** | **0.9276** | **0.9614** | **0.9694** |
+| EfficientNet-B0   | 0.9038   | 0.9146    | 0.9333  | 0.9239 | 0.9479  | 0.9653 |
+
+**Modelo final: ResNet50** — mayor AUC-ROC y mayor recall, las dos métricas críticas en el contexto clínico. Falla solo en ~3 de cada 100 casos positivos en el test set.
 
 ## Interpretabilidad
 
-Se aplica **Grad-CAM** sobre el mejor modelo para visualizar qué regiones del pulmón motivan la predicción, evidenciando que el modelo atiende a regiones plausibles desde el punto de vista clínico.
+Se aplica **Grad-CAM** sobre ResNet50 para visualizar qué regiones del pulmón motivan la predicción. Las activaciones se concentran en el parénquima pulmonar (zonas medias e inferiores), regiones clínicamente esperables para infiltrados neumónicos, lo que da confianza de que el modelo no aprendió atajos espurios.
 
 ## Video
 
